@@ -10,8 +10,13 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
+        "laravel/socialite": "^5.5",
         "laravel/tinker": "^2.5",
-        "tarikhagustia/laravel-mt5": "^1.4"
+        "laravel/ui": "^3.4",
+        "pusher/pusher-php-server": "^7.0",
+        "realrashid/sweet-alert": "^5.0",
+        "tarikhagustia/laravel-mt5": "^1.4",
+      "ext-json": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

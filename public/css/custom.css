@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+  height: 100vh;
+}
+.bg__img--signin {
+  z-index: -2;
+  min-height: 100vh;
+  background-image: url("../img/photo_2022-02-09_01-32-38.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.title::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  height: 2px;
+  left: -250px;
+  width: calc(100% + 250px);
+  background-color: #707070;
+}
+.sign__in::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  height: 6px;
+  width: 791px;
+  background-color: #707070;
+  opacity: 0.10000000149011612;
+}
+.sign__in--line::before {
+  content: "";
+  position: absolute;
+  bottom: -35px;
+  height: 6px;
+  width: 791px;
+  background-color: #707070;
+  opacity: 0.10000000149011612;
+}
+
+@media (max-width: 750px) {
+  .bg__img {
+    background-image: url("../img/photo_2022-02-09_23-30-24.jpg");
+    min-height: 375px;
+  }
+  .title::before {
+    width: 470px;
+  }
+  .sign__in--line::before {
+    display: none;
+  }
+  .sign__in::before {
+    display: none;
+  }
+}
+.google__btn {
+  box-shadow: 7.8664631843566895px 21.612930297851562px 28.5px
+    rgba(249, 103, 103, 0.25882352941176473);
+  background: linear-gradient(to left, #019ad6, #844ebb, #e45e8e);
+  border-radius: 28px;
+}
+.facebook__btn {
+  box-shadow: 2.7783708572387695px 15.75692367553711px 20px
+    rgba(105, 95, 151, 0.1411764705882353);
+  border-radius: 28px;
+}
+.sign__in__btn {
+  background: linear-gradient(to left, #6149cd, #a654ac, #ea5f8b);
+}
+/* signup */
+.bg__img--signup {
+  z-index: -2;
+  min-height: 100vh;
+  background-image: url("../img/photo_2022-02-10_00-47-55.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Forgot password? */
+.bg__img--signup {
+  z-index: -2;
+  min-height: 100vh;
+  background-image: url("../img/photo_2022-02-10_01-13-08.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+/*Corporate*/
+.bg__img--corporate{
+    z-index: -2;
+    min-height: 100vh;
+    background-image: url("../img/Group 57.png");
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.switch-lang{
+  direction: rtl;
+}
+.ar-gap{
+  gap: 2rem;
+}

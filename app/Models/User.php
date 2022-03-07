@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -17,10 +17,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
+    protected $guarded = [
     ];
 
     /**
@@ -41,4 +38,33 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function information(){
+        return $this->hasOne(BasicInformation::class);
+        
+    }
+    public function logins(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(MtHulul::class)->orderBy('created_at','DESC');
+    }
+    public function quc(){
+        return $this->hasOne(Quc::class);
+        
+    }
+    public function accounts(){
+        return $this->hasMany(UserAccounts::class);
+        
+    }
+    public function agreed(){
+        if (!empty($this->quc) ) {
+            foreach ($this->quc as $value ) {
+                return $value;
+                if( '1' == $value->agree){
+                    return true;
+                }
+                return false;
+            }
+        }
+        
+        
+    }
 }

@@ -1,0 +1,424 @@
+/* * {
+    box-sizing: border-box;
+  } */
+  body {
+    margin: 0%;
+    padding: 0%;
+    font-family: sans-serif;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .dropdown {
+    /* position: relative;
+    top: 50px;
+    left: 45%;
+    margin-top: 15px; */
+    width: 160px;
+    height: 50px;
+}
+
+
+/* .dropdown::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 1000;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #333;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(-45deg);
+    transition: 0.5s;
+    pointer-events: none;
+} */
+
+.dropdown.active::before {
+    top: 22px;
+    transform: rotate(-225deg);
+}
+
+.dropdown input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background: #fff;
+    font-size: 1.2em;
+    border: none;
+    outline: none;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    padding: 12px 20px;
+    border-radius: 10px;
+}
+
+.dropdown .options {
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    display: none;
+}
+
+.dropdown.active .options {
+    display: block;
+}
+
+.dropdown .options div {
+    padding: 12px 20px;
+    cursor: pointer;
+}
+
+.dropdown .options div:hover {
+    background: #62baea;
+    color: #fff;
+}
+  .cont {
+    display: grid;
+    grid-template-areas:
+      "header main main main main footer "
+      "header main main main main footer "
+      "header main main main main footer ";
+  }
+
+  .header {
+    grid-area: header;
+    height: 100vh;
+    border-right: #ebebeb solid 1px;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    width: 100%;
+  }
+  .main {
+      display: flex;
+      flex-direction: column;
+    padding: 2rem;
+    grid-area: main;
+    height: 100vh;
+    /* border: #000 solid 2px; */
+    display: grid;
+    grid-template-areas:
+      "title title title"
+      "main2 main2 main2"
+      "footer2 footer2 footer2";
+    gap: 2vh;
+  }
+  .footer {
+    grid-area: footer;
+    text-align: center;
+    height: 200vh;
+    border-left: #ebebeb solid 1px;
+    width: 300px;
+    transition: 1s all;
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-toggle {
+    width: 0;
+    opacity: 0;
+    transition: 1s all;
+  }
+  .right-link {
+    color: #7a86a1;
+    width: 40%;
+    height: 50px;
+    border: 0.5px solid rgba(119, 119, 119, 0.322);
+    background-color: #ffffff;
+    border-radius: 50px;
+    line-height: 3;
+  }
+  .right-link:hover {
+    background-color: #6149cd;
+    color: #fff;
+    cursor: pointer;
+  }
+  .arrow {
+    position: absolute;
+    top: 50%;
+    right: 18.4%;
+    background-color: #ffffff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+  .arrow :hover {
+    background-color: #3f4450;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: #f6efff;
+    transition: 0.5s all;
+  }
+  .menue-btn {
+    margin-top: 1.5vh;
+    color: #3f4450b2;
+    display: none;
+  }
+  .menue-btn :hover {
+    cursor: pointer;
+  }
+  .footer2 {
+    grid-area: footer2;
+    height: 40vh;
+    /* border: #000 solid 2px; */
+  }
+
+  .main2 {
+    grid-area: main2;
+    height: 60vh;
+    display: flex;
+    gap: 2rem;
+  }
+  .title {
+    grid-area: title;
+    height: 10vh;
+    /* border: #000 solid 2px; */
+    /* display: flex; */
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  .list {
+    list-style: none;
+    line-height: 2.5;
+  }
+  a {
+    text-decoration: none;
+    color: #3f4450;
+  }
+  .links {
+    padding-left: 10px;
+    transition: 0.1 s all;
+    padding: 1vh;
+  }
+  .links:hover {
+    background-color: #6149cd;
+    border: #fff solid 1px;
+    width: 95%;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 20px;
+    color: #b8b8b8;
+  }
+  .links:active {
+    background-color: #6149cd;
+    border: #fff solid 1px;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+  .svg-btn:hover {
+    cursor: pointer;
+    height: 110px;
+    transition: 0.3s all;
+  }
+  .first-right-cont {
+    direction: rtl;
+  }
+  .profile-validation {
+    width: 340px;
+    height: 82.5%;
+    /* margin-top: 8vh; */
+    margin-left: 6rem;
+    transition: 1s all;
+  }
+  .profile-validation-top {
+    width: 100%;
+    background-image: url(../../img/dashimgs/image\ &\ bg.png);
+    height: 68%;
+    margin-top: 8vh;
+    /* margin-left: 1rem; */
+    border-radius: 50px;
+    border: 0px;
+    display: grid;
+    grid-template-areas:
+      "profile-icon  profile-icon"
+      "profile-logo  profile-logo";
+    padding-top: 2vh;
+  }
+  .profile-validation-bottom {
+    border: 0;
+    height: 27%;
+    width: 100%;
+    border-radius: 50px;
+    background-color: #f6efff;
+    /* margin-left: 1rem; */
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .slider {
+    width: 340px;
+    background-image: url(../../img/dashimgs/bg\ &\ image.jpg);
+    height: 82.5%;
+    margin-top: 8vh;
+    margin-left: 1rem;
+    border-radius: 50px;
+    border: 0px;
+    display: grid;
+    grid-template-areas:
+      "profile-icon  profile-icon"
+      "profile-logo  profile-logo";
+    transition: 1s all;
+  }
+  .profile-icon {
+    grid-area: profile-icon;
+    height: 1fr;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .profile-logo {
+    width: 100%;
+    height: 2fr;
+    grid-area: profile-logo;
+    display: flex;
+  }
+  .profile-title {
+    width: 100%;
+    grid-area: profile-title;
+    height: 2fr;
+  }
+  .hover-curser:hover {
+    cursor: pointer;
+  }
+
+  /*create acount section*/
+  .footer2 {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    margin-top: 2vh;
+    margin-left: 6rem;
+    margin-right: 5.2rem;
+    width: 720px;
+    transition: 1s all;
+    /* height: 100vh; */
+  }
+  .create-titles {
+    display: flex;
+    height: 100px;
+  }
+  .account-create-title-light {
+    display: flex;
+    width: 50%;
+    height: 100px;
+    border-bottom: #c0bdcc solid 5px;
+    color: #c0bdcc;
+  }
+
+  .account-create-title-colored {
+    display: flex;
+    width: 50%;
+    height: 100px;
+    border-bottom: #6149cd solid 5px;
+  }
+  .accont-logo {
+    height: 30px;
+    width: 30px;
+  }
+  .account-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin-bottom: 5px;
+    margin-left: 2px;
+  }
+  .create-main {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .create--main-content {
+    width: 350px;
+    height: 500px;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    max-height:432px;
+    margin-top: 3.5vh
+
+  }
+  .top-background {
+    background-image: url("../../img/dashimgs/chart\ copy\ 3.jpg");
+  }
+
+  .add-hover :hover {
+    cursor: pointer;
+  }
+  .footer-of-all{
+      background-image: url('../../img/dashimgs/your\ image\ here.jpg');
+      margin:auto;
+      width: 100%;
+  }
+  .footer-of-all:hover{
+     cursor: pointer;
+  }
+  @media (max-width: 750px) {
+    .header {
+      display: none;
+    }
+    .footer {
+      display: none;
+    }
+    .cont {
+      display: grid;
+      grid-template-areas:
+        "main main main main main"
+        "main main main main main"
+        "main main main main main";
+    }
+    .main2{
+        flex-direction: column;
+        margin-bottom: 50vh;
+    }
+    .arrow{
+        display: none;
+    }
+    .slider{
+        margin-left: 5.5rem;
+        height: 100%;
+    }
+    .slider-content{
+    height: 447px;
+    }
+    .create-titles {
+     display: none;
+
+    }
+    .account-create-title-light {
+      display: flex;
+      width: 10%;
+      height: 100px;
+      border-bottom: #c0bdcc solid 5px;
+      color: #c0bdcc;
+    }
+
+    .account-create-title-colored {
+      display: flex;
+      width: 10%;
+      height: 100px;
+      border-bottom: #6149cd solid 5px;
+    }
+    .create-main{
+        flex-direction: column;
+        gap: 5vh;
+        margin-right: 3rem;
+        margin-top: 50vh;
+    }
+    .footer2{
+        margin-left: 5rem;
+    }
+  }

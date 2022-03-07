@@ -23,7 +23,7 @@ class TraderController extends Controller
     public function index()
     {
 
-    }
+    
 
 //        $api = new LaravelMt5();
 // Get Closed Order Total and pagination
@@ -34,11 +34,10 @@ class TraderController extends Controller
 //
 //  ]);
 //        $api = new LaravelMt5();
-//        try {
-//            $user = $api->getTradingAccounts(101133);
-//        } catch (ConnectionException|UserException $e) {
-//        }
-//
+  
+//            $user = $api->getTradingAccounts(101181);
+  
+
 //        $balance = $user->Balance;
 //        $equity = $user->Equity;
 //        $freeMargin = $user->MarginFree;
@@ -49,7 +48,7 @@ class TraderController extends Controller
 //            'freeMargin'=>$freeMargin,
 //            'name'=>$name,
 //        ]);
-//    }
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -100,19 +99,34 @@ class TraderController extends Controller
 //        return view('welcome');
 //    }
 
-        $api = new LaravelMt5();
-        $user = new User();
-        $user->setName($request->name);
-        $user->setEmail($request->email);
-        $user->setGroup($request->group);
-        $user->setLeverage($request->leverage);
-        $user->setMainPassword($request->password);
-        $user->setInvestorPassword($request->invest_password);
-        $result = $api->createUser($user);
-        dd($result);
+    //     $api = new LaravelMt5();
+    //     $user = new User();
+    //     $user->setName($request->name);
+    //     $user->setEmail($request->email);
+    //     $user->setGroup($request->group);
+    //     $user->setLeverage($request->leverage);
+    //     $user->setMainPassword($request->password);
+    //     $user->setInvestorPassword($request->invest_password);
+    //     $result = $api->createUser($user);
+    //     dd($result);
 
-        return view('welcome');
-    }
+    //     return view('welcome');
+    $api = new LaravelMt5();
+  
+               $user = $api->getTradingAccounts(101181);
+      
+    
+           $balance = $user->Balance;
+           $equity = $user->Equity;
+           $freeMargin = $user->MarginFree;
+           $name = $user->CurrencyDigits;
+           return view('show',[
+               'balance'=>$balance,
+               'equity'=>$equity,
+               'freeMargin'=>$freeMargin,
+               'name'=>$name,
+           ]);
+     }
 
 
 
